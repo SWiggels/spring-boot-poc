@@ -1,3 +1,3 @@
 spring-boot-poc
 ===============
-Test
+Doing git ignore
