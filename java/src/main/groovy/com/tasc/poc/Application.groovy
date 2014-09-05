@@ -19,7 +19,8 @@ public class Application {
 	public DataSource dataSource() {
 	  DataSource bean = new EmbeddedDatabaseBuilder()
 		.setType(EmbeddedDatabaseType.H2)
-		.addScript("classpath:schema.sql")
+		.addScript("classpath:my-schema.sql")
+		.addScript("classpath:my-test-data.sql")
 		.build();
 	  return bean;
 	}
