@@ -1,4 +1,4 @@
-package com.mycompany.example;
+package com.tasc.poc.dto;
 
 public class HelloWorld {
 

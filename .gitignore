@@ -5,3 +5,5 @@ gradlew
 /java/.settings
 /java/.project
 /java/.classpath
+/java/helloworld.log
+/java/.gitignore

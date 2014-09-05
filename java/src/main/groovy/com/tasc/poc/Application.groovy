@@ -1,4 +1,4 @@
-package com.mycompany.example;
+package com.tasc.poc;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.SpringApplication;
