@@ -1,4 +1,4 @@
-package com.tasc.poc.test.rest.helloworld
+package com.tasc.poc.test.unit.rest.helloworld
 
 import org.junit.Before
 import org.junit.Test
