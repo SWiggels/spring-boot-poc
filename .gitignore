@@ -2,3 +2,6 @@ gradle
 gradlew
 .gradle
 /java/build
+/java/.settings
+/java/.project
+/java/.classpath
