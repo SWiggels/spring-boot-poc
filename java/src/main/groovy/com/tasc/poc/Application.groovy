@@ -10,11 +10,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
+/**
+ * Main class for the application boot.
+ */
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
 public class Application {
 	
+	/**
+	 * Adds the data source bean, test schema, and data.
+	 * 
+	 * @return - The data source for the application bootstrap.
+	 */
 	@Bean
 	public DataSource dataSource() {
 	  DataSource bean = new EmbeddedDatabaseBuilder()
@@ -25,6 +33,11 @@ public class Application {
 	  return bean;
 	}
 
+	/**
+	 * Main method to start the application.
+	 * 
+	 * @param args - No args required.
+	 */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

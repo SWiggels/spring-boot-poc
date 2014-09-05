@@ -26,7 +26,9 @@ repositories {
 
 dependencies {
 
-    compile ('org.codehaus.groovy:groovy-all:2.0.8')
+	compile ("org.projectlombok:lombok:1.14.6")
+	
+    compile ('org.codehaus.groovy:groovy-all:2.3.0')
 
     compile ('org.springframework.boot:spring-boot-starter-web:1.0.1.RELEASE')
     compile ('com.fasterxml.jackson.core:jackson-databind:2.3.1')

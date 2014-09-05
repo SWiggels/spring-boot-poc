@@ -1,4 +1,4 @@
-package com.mycompany.example;
+package com.tasc.poc.test.rest.helloworld;
 
 import org.junit.Before;
 import org.junit.Test;
