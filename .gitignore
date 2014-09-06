@@ -26,3 +26,9 @@ gradlew
 /golden/rest/.classpath
 /golden/rest/.project
 /golden/rest/.settings/org.eclipse.jdt.core.prefs
+/golden/business/build/libs
+/golden/business/build/tmp/jar
+/golden/entity/build/libs
+/golden/entity/build/tmp/jar
+/golden/repository/build/libs
+/golden/repository/build/tmp/jar
