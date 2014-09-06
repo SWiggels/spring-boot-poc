@@ -50,6 +50,13 @@ subprojects {
         compile("org.springframework.boot:spring-boot-starter-web:1.1.+")
         compile ("org.projectlombok:lombok:$lombokVersion")
     }
+	
+	sourceSets {
+		integration {
+			groovy.srcDir file('src/integration/groovy')
+			resources.srcDir file('src/integration/resources')
+		}
+	}
 }
 
 task wrapper(type: Wrapper) {

@@ -39,3 +39,7 @@ gradlew
 /golden/facade/build
 /golden/repository/build
 /golden/rest/build
+/golden/business/bin
+/golden/rest/bin
+/golden/facade/bin
+/golden/repository/bin
