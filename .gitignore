@@ -43,3 +43,4 @@ gradlew
 /golden/rest/bin
 /golden/facade/bin
 /golden/repository/bin
+/golden/rest/tasc-golden.log

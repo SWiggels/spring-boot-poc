@@ -25,7 +25,6 @@ repositories {
     maven { url 'http://repo.spring.io/libs-release' }
 }
 
-
 dependencies {
 	
 	String springBootVersion 	= "1.1.6.RELEASE"
