@@ -1,0 +1,66 @@
+buildscript {
+    repositories { 
+    
+        jcenter()
+   
+        // To use mavenCentral uncomment the following line
+        // mavenCentral()
+    }
+    dependencies {
+    
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.5.RELEASE")
+        
+    }
+}
+
+// Settings for all modules
+allprojects {
+
+    group = 'com.tasc'
+
+    version = '0.0.1'
+
+    repositories() {
+    
+        //jcenter()
+        
+        // To use mavenCentral uncomment the following line
+        mavenCentral()
+        
+        // vaadin4spring
+        maven {
+        
+        	url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+    }
+}
+
+// Settings for all submodules
+subprojects {
+
+    apply plugin: 'idea'
+
+    apply plugin: 'eclipse'
+
+    apply plugin: 'java'
+	
+	apply plugin: 'groovy'
+
+    apply plugin: 'spring-boot'
+
+    sourceCompatibility = 1.7
+
+    targetCompatibility = 1.7
+
+    dependencies {
+
+        // Spring Boot
+        compile("org.springframework.boot:spring-boot-starter-web:1.1.+")
+        
+    }
+}
+
+task wrapper(type: Wrapper) {
+
+    gradleVersion = '2.0'
+}
