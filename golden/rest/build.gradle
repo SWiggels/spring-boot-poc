@@ -1,0 +1,4 @@
+dependencies {
+	compile project(':facade')
+	compile project(':dto')
+}

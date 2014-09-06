@@ -1,0 +1,5 @@
+dependencies {
+    compile project(':entity')
+	compile project(':business')
+	compile project(':dto')
+}
