@@ -21,16 +21,10 @@ allprojects {
     version = '0.0.1'
 
     repositories() {
-    
-        //jcenter()
+		mavenCentral()
         
-        // To use mavenCentral uncomment the following line
-        mavenCentral()
-        
-        // vaadin4spring
         maven {
-        
-        	url 'https://oss.sonatype.org/content/repositories/snapshots'
+			url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
     }
 }
@@ -45,6 +39,9 @@ subprojects {
 
     sourceCompatibility = 1.7
     targetCompatibility = 1.7
+	
+	bootRepackage.enabled = false;
+	bootRun.enabled = false;
 
     dependencies {
 		

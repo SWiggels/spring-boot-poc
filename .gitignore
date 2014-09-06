@@ -32,3 +32,10 @@ gradlew
 /golden/entity/build/tmp/jar
 /golden/repository/build/libs
 /golden/repository/build/tmp/jar
+/golden/dto/build/classes/main/com/tasc/golden/poc/dto/*.class
+/golden/dto/build
+/golden/business/build
+/golden/entity/build
+/golden/facade/build
+/golden/repository/build
+/golden/rest/build
