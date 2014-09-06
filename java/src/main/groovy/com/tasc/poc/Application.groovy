@@ -14,6 +14,8 @@ import org.springframework.orm.jpa.JpaTransactionManager
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter
 import org.springframework.transaction.PlatformTransactionManager
+import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 
 /**
  * Main class for the application boot.
@@ -22,6 +24,11 @@ import org.springframework.transaction.PlatformTransactionManager
 @EnableAutoConfiguration
 @ComponentScan
 public class Application {
+	
+	@Bean
+	public Mapper getMapper() {
+		return new DozerBeanMapper();
+	}
 	
 	/**
 	 * Main method to start the application.
