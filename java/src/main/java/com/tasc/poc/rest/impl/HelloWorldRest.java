@@ -28,6 +28,7 @@ public class HelloWorldRest implements IHelloWorldRest {
     /**
      * {@inheritDoc}
      */
+    @Override
     @RequestMapping("/helloworld")
     public HelloWorld greeting(@RequestParam(value="name", required=false, defaultValue="World") final String name) {
         return new HelloWorld(counter.incrementAndGet(), String.format(template, name)); 
