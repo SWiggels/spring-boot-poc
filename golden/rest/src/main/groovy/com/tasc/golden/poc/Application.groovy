@@ -22,33 +22,33 @@ import com.tasc.golden.poc.dto.UserDto;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
-@EnableWebMvcSecurity
-public class Application extends WebSecurityConfigurerAdapter {
+//@EnableWebMvcSecurity
+public class Application { //extends WebSecurityConfigurerAdapter {
 	
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.authorizeRequests()
-				.antMatchers("/", "/helloworld").permitAll()
-				.anyRequest().authenticated();
-	}
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http
+//			.authorizeRequests()
+//				.antMatchers("/", "/helloworld").permitAll()
+//				.anyRequest().authenticated();
+//	}
 	
 	@Bean
 	public Mapper getMapper() {
 		return new DozerBeanMapper();
 	}
 	
-	@Configuration
-	protected static class AuthenticationConfiguration extends
-			GlobalAuthenticationConfigurerAdapter {
-
-		@Override
-		public void init(AuthenticationManagerBuilder auth) throws Exception {
-			auth
-					.inMemoryAuthentication()
-					.withUser("user").password("password").roles("USER");
-		}
-	}
+//	@Configuration
+//	protected static class AuthenticationConfiguration extends
+//			GlobalAuthenticationConfigurerAdapter {
+//
+//		@Override
+//		public void init(AuthenticationManagerBuilder auth) throws Exception {
+//			auth
+//					.inMemoryAuthentication()
+//					.withUser("user").password("password").roles("USER");
+//		}
+//	}
 	
 	/**
 	 * Main method to start the application.
