@@ -13,6 +13,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 
+import com.tasc.golden.poc.dto.UserDto;
+
 
 /**
  * Main class for the application boot.
@@ -46,7 +48,6 @@ public class Application extends WebSecurityConfigurerAdapter {
 					.inMemoryAuthentication()
 					.withUser("user").password("password").roles("USER");
 		}
-
 	}
 	
 	/**
@@ -56,6 +57,7 @@ public class Application extends WebSecurityConfigurerAdapter {
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
+		
 	}
 }
 

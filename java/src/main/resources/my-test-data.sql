@@ -1,1 +1,0 @@
-insert into user (FIRST_NAME, LAST_NAME, EMAIL) values ('Bob', 'Smith', 'something@something.com')
