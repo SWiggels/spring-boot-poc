@@ -2,36 +2,41 @@
 
 > Template set up in order to develop angularjs applications using node as a proxy server.
 
-## Before You Begin 
+## A Few Notes
 
-You will need to install node/npm to run this example.
+Note that this version of the app uses  AngularUI Router [ui-router](https://github.com/angular-ui/ui-router), as a result it is recommended that you use the cli for adding purpose to the app.
 
-You will also need to install GIT on your machine in order to use the CLI of git since their is a dependency on the git libs.
+Also note that [http-proxy](https://github.com/nodejitsu/node-http-proxy) has been installed in this package.
 
-Once this is installed you will also want to add Yoeman:
+## Install Base Requirements 
+
+If you have not already, install [Git](http://http://git-scm.com/downloads) on your machine. You will need to use the Git Bash shell for running the server.
+
+Additionally, you will need to install [node.js/npm](http://nodejs.org/) to run this example.
+
+## Project Specific Intall Requirements
+
+Add [Yeoman and Bower](http://yeoman.io/)
 
 ```shell
 npm install -g grunt-cli yo bower
 ```
 
-Add the enterprise package development generator for angular.
+Add the [enterprise package development generator](https://github.com/cgross/generator-cg-angular) for angular.
 ```shell
 npm install -g generator-cg-angular
 ```
 
-## Building The Project
+## Install Dependancies
 
-
-Finally, add the required angular enterprise package and development tooling: npm install -g generator-cg-angular
-
-This is from (at the time of writing) the git hub: https://github.com/cgross/generator-cg-angular
-
-Note that this version of the app uses  AngularUI Router [ui-router](https://github.com/angular-ui/ui-router), as a result it is recommended that you use the cli for adding purpose to the app.
-
+You will need to now install the projects dependencies.
+```shell
 bower install & npm install
+```
 
-Also note that http-proxy has been installed in this package.
+## Run The Server
 
-In order to run the server, as grunt has been extended to support the proxy pass through: 
+In order to run the server, as grunt has been extended to support the proxy pass through
+```shell
 grunt run
-
+```

@@ -50,7 +50,7 @@ subprojects {
         compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
 		compile ("org.codehaus.groovy:groovy-all:$groovyAllVersion")
 		compile ("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
-		compile ("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
+		// compile ("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
         compile ("org.projectlombok:lombok:$lombokVersion")
 		
 		String junitVersion 			= "4.11"
