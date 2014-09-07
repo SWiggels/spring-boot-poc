@@ -48,3 +48,5 @@ gradlew
 /web/node_modules
 /web/dist
 build
+bower_components
+node_modules
