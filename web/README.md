@@ -12,11 +12,10 @@ Finally, add the required angular enterprise package and development tooling: np
 
 This is from (at the time of writing) the git hub: https://github.com/cgross/generator-cg-angular
 
-yo cg-angular
-
 Note that this version of the app uses  AngularUI Router (https://github.com/angular-ui/ui-router), as a result it is recommended that you use the cli for adding purpose to the app.
 
 bower install & npm install
+
 
 create .bowerrc
 create .editorconfig
