@@ -37,6 +37,47 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
+  
+	express: {
+		options: {
+			  // Override the command used to start the server.
+			// (do not use 'coffee' here, the server will not be able to restart
+			//  see below at opts for coffee-script support)
+			cmd: process.argv[0],
+
+			// Will turn into: `node OPT1 OPT2 ... OPTN path/to/server.js ARG1 ARG2 ... ARGN`
+			// (e.g. opts: ['node_modules/coffee-script/bin/coffee'] will correctly parse coffee-script)
+			opts: [ ],
+			args: [ ],
+
+			// Setting to `false` will effectively just run `node path/to/server.js`
+			background: true,
+
+			// Called when the spawned server throws errors
+			fallback: function() {},
+
+			// Override node env's PORT
+			port: 3000,
+
+			// Override node env's NODE_ENV
+			node_env: undefined,
+
+			// Consider the server to be "running" after an explicit delay (in milliseconds)
+			// (e.g. when server has no initial output)
+			delay: 0,
+
+			// Regular expression that matches server output to indicate it is "running"
+			output: ".+",
+
+			// Set --debug
+			debug: false
+		},
+		dev: {
+			options: {
+				script: 'proxy-server.js'
+			}
+		}
+	},
     connect: {
       main: {
         options: {
@@ -193,11 +234,14 @@ module.exports = function (grunt) {
       },
     }
   });
+  
+  grunt.loadNpmTasks('grunt-express-server');
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
   grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
-
+  grunt.registerTask('run', [ 'express:dev', 'watch' ])
+  
   grunt.event.on('watch', function(action, filepath) {
     //https://github.com/gruntjs/grunt-contrib-watch/issues/156
 
