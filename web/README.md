@@ -16,15 +16,4 @@ Note that this version of the app uses  AngularUI Router (https://github.com/ang
 
 bower install & npm install
 
-
-create .bowerrc
-create .editorconfig
-create .jshintrc
-create .npmignore
-create Gruntfile.js
-create app.js
-create app.less
-create bower.json
-create gulpfile.js
-create index.html
-create package.json
+Also note that http-proxy has been installed in this package.

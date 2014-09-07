@@ -44,3 +44,5 @@ gradlew
 /golden/facade/bin
 /golden/repository/bin
 /golden/rest/tasc-golden.log
+/web/bower_components
+/web/node_modules
