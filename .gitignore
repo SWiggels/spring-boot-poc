@@ -50,3 +50,8 @@ gradlew
 build
 bower_components
 node_modules
+.settings
+bin
+.classpath
+.project
+tasc-golden.log
