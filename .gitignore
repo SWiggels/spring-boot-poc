@@ -46,3 +46,4 @@ gradlew
 /golden/rest/tasc-golden.log
 /web/bower_components
 /web/node_modules
+/web/dist

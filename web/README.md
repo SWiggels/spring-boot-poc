@@ -17,3 +17,4 @@ Note that this version of the app uses  AngularUI Router (https://github.com/ang
 bower install & npm install
 
 Also note that http-proxy has been installed in this package.
+
