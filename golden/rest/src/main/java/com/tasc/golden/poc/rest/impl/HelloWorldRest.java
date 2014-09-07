@@ -16,23 +16,10 @@ import com.tasc.golden.poc.rest.IHelloWorldRest;
 @RestController
 public class HelloWorldRest implements IHelloWorldRest {
 
-	/**
-	 * For string formatting of the return value.
-	 */
-	private static final String template = "Hello, %s!";
-	
-	/**
-	 * Basic counter for the return HelloWorld object.
-	 */
-    private final AtomicLong counter = new AtomicLong();
-
-    /**
-     * {@inheritDoc}
-     */
     @Override
     @RequestMapping("/helloworld")
     public HelloWorld greeting(@RequestParam(value="name", required=false, defaultValue="World") final String name) {
-        return new HelloWorld(counter.incrementAndGet(), String.format(template, name)); 
+        return new HelloWorld(new AtomicLong().incrementAndGet(), String.format("Hello, %s!", name)); 
     }
 }
 

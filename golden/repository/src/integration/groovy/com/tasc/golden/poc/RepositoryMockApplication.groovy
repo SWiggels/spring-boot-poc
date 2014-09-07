@@ -13,18 +13,15 @@ import org.springframework.security.config.annotation.web.servlet.configuration.
 
 
 /**
- * Main class for the application boot.
+ * Need for the integration tests in respository as it is not able to access the rest folder.
+ * 
+ * Basically a mock.
  */
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
 public class RepositoryMockApplication  {
 	
-	/**
-	 * Main method to start the application.
-	 *
-	 * @param args - No args required.
-	 */
 	public static void main(String[] args) {
 		SpringApplication.run(RepositoryMockApplication.class, args);
 		
