@@ -21,11 +21,11 @@
     "modules": [
       {
         "name": "clientModule",
-        "file": "src\\feature\\client\\client-module.js"
+        "file": "src\\app\\client\\client-module.js"
       },
       {
         "name": "participantModule",
-        "file": "src\\feature\\participant\\participant-module.js"
+        "file": "src\\app\\participant\\participant-module.js"
       }
     ]
   }

@@ -1,9 +1,15 @@
-angular.module('golden', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'clientModule', 'participantModule']);
+angular.module('golden', [
+    'ui.bootstrap', 
+    'ui.utils', 
+    'ui.router', 
+    'ngAnimate', 
+    'clientModule', 
+    'participantModule']);
 
 angular.module('golden').config(function($stateProvider, $urlRouterProvider) {
 
     /* Add New States Above */
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/clients');
 
 });
 
@@ -17,7 +23,7 @@ angular.module('golden').run(function($rootScope) {
             }
         } else {
             this.$apply(fn);
-        }
+        } 
     };
 
 });
