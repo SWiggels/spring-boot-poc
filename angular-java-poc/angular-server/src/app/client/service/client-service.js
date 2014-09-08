@@ -1,14 +1,16 @@
-angular.module('clientModule').factory('clientService',function() {
+angular.module('clientModule').factory('clientService',function($http, $q) {
 
 	var clientService = {};
 
 	clientService.findAll = function() {
-		console.log("sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss");
-		return [
-			{name:'bob'},
-			{name:'Steve'}
-		];
-	}
+		var deferred = $q.defer();
+		$http.get('http://localhost:8080/api/clients').
+			success(function(data) {
+				deferred.resolve(data);
+		});
+		
+		return deferred.promise;
+	};
 
 	return clientService;
 });

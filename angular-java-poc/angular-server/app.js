@@ -7,10 +7,7 @@ angular.module('golden', [
     'participantModule']);
 
 angular.module('golden').config(function($stateProvider, $urlRouterProvider) {
-
-    /* Add New States Above */
     $urlRouterProvider.otherwise('/clients');
-
 });
 
 angular.module('golden').run(function($rootScope) {
@@ -25,5 +22,5 @@ angular.module('golden').run(function($rootScope) {
             this.$apply(fn);
         } 
     };
-
+    
 });
