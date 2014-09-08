@@ -8,8 +8,6 @@ Note that this version of the app uses  AngularUI Router [ui-router](https://git
 
 Also note that [http-proxy](https://github.com/nodejitsu/node-http-proxy) has been installed in this package.
 
-Finally, you will be served well if you read [this post](https://medium.com/@dickeyxxx/best-practices-for-building-angular-js-apps-266c1a4a6917) on best practices for organizing angularjs applications.
-
 ## Modules????
 
 This doc does not intent to go over all the reasons for modules, the preceding link does a good job of that. As you know, modules are coming in ES6.
@@ -23,7 +21,29 @@ A module for each reusable component (especially directives and filters)
 And an application level module which depends on the above modules and contains any initialization code.
 ```
 
-## Install Base Requirements 
+## More Reading
+
+[Begin here](https://medium.com/@dickeyxxx/best-practices-for-building-angular-js-apps-266c1a4a6917)
+
+[Next]https://medium.com/opinionated-angularjs/scalable-code-organization-in-angularjs-9f01b594bf06
+
+[Then](https://medium.com/opinionated-angularjs/a2fcbf874a1c)
+
+[ng-boilerplate](https://github.com/ngbp/ngbp#readme)
+
+[Font Awesome](http://fortawesome.github.io/Font-Awesome/)
+
+[Placeholders](http://joshdmiller.github.io/angular-placeholders/)
+
+[Google best practices](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub)
+
+[Google style guide](https://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html)
+
+[angular-app]{https://github.com/angular-app/angular-app/}
+
+Read the [book](https://www.packtpub.com/web-development/mastering-web-application-development-angularjs)
+
+## Finally... Install Base Requirements 
 
 If you have not already, install [Git](http://http://git-scm.com/downloads) on your machine. You will need to use the Git Bash shell for running the server.
 
