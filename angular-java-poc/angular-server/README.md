@@ -8,6 +8,21 @@ Note that this version of the app uses  AngularUI Router [ui-router](https://git
 
 Also note that [http-proxy](https://github.com/nodejitsu/node-http-proxy) has been installed in this package.
 
+Finally, you will be served well if you read [this post](https://medium.com/@dickeyxxx/best-practices-for-building-angular-js-apps-266c1a4a6917) on best practices for organizing angularjs applications.
+
+## Modules????
+
+This doc does not intent to go over all the reasons for modules, the preceding link does a good job of that. As you know, modules are coming in ES6.
+
+Angular modules are covered [here](https://docs.angularjs.org/guide/module)
+
+Finally, as a high level understanding of modules the following is provided.
+```Shell
+A module for each feature
+A module for each reusable component (especially directives and filters)
+And an application level module which depends on the above modules and contains any initialization code.
+```
+
 ## Install Base Requirements 
 
 If you have not already, install [Git](http://http://git-scm.com/downloads) on your machine. You will need to use the Git Bash shell for running the server.

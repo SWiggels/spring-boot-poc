@@ -1,4 +1,4 @@
-angular.module('golden', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
+angular.module('golden', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'clientModule', 'participantModule']);
 
 angular.module('golden').config(function($stateProvider, $urlRouterProvider) {
 

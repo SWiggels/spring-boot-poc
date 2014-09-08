@@ -240,7 +240,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
   grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
-  grunt.registerTask('run', [ 'express:dev', 'watch' ])
+  grunt.registerTask('run', [ 'express:dev', 'jshint', 'watch' ])
   
   grunt.event.on('watch', function(action, filepath) {
     //https://github.com/gruntjs/grunt-contrib-watch/issues/156
