@@ -23,4 +23,9 @@ public class ClientBusiness implements IClientBusiness {
 	public List<Client> findAll() {
 		return this.clientRepo.findAll();
 	}
+	
+	@Override
+	public Client findById(Long id) {
+		return this.clientRepo.findOne(id);
+	}
 }

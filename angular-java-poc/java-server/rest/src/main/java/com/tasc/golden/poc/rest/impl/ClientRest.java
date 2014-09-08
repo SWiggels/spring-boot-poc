@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tasc.golden.poc.dto.ClientDto;
@@ -29,5 +30,11 @@ public class ClientRest implements IClientRest {
 	public SimpleRestResponse save(@RequestBody ClientDto clientDto) {
 		this.clientFacade.save(clientDto);
 		return new SimpleRestResponse();
+	}
+	
+	@RequestMapping("/api/client")
+	@Override
+	public ClientDto findById(@RequestParam(value="id", required=true) final Long id) {
+		return this.clientFacade.findById(id);
 	}
 }

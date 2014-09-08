@@ -11,4 +11,6 @@ public interface IClientRest {
 	
 	SimpleRestResponse save(ClientDto clientDto);
 	
+	ClientDto findById(Long id);
+	
 }

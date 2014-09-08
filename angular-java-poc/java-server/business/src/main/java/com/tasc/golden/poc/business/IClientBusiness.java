@@ -9,4 +9,6 @@ public interface IClientBusiness {
 	Client save(Client client);
 	
 	List<Client> findAll();
+	
+	Client findById(Long id);
 }

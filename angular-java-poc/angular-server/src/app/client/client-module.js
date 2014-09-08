@@ -19,15 +19,19 @@ angular.module('clientModule').config(function($stateProvider) {
     });
 
     $stateProvider.state('client-edit', {
-        url: '/client',
+        url: '/client/:id',
         templateUrl: 'src/app/client/partial/client-edit/client-edit.html',
         controller: 'ClientEditCtrl',
         resolve: {
-		    client: function($stateParams) {
-				return {};
-		    }
+		    client: function($stateParams, clientService) {
+				if ($stateParams.id < 0) {
+					return {};
+				} else {
+					return clientService.findById($stateParams.id);
+				}	
+			}
 		}
-    });
+	});
     
 });
 

@@ -55,4 +55,14 @@ class ClientRestUnitSpec extends Specification {
 			rlist.size() == 1;
 	}
 	
+	def "find one by id"() {
+		setup:
+			this.clientRest.@clientFacade = [findById:{[id: 1L, name: "Bobby"] as ClientDto}] as IClientFacade;
+		
+		when:
+			def client = this.clientRest.findById(1L);
+		
+		then:
+			client != null;
+	}
 }

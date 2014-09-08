@@ -9,4 +9,6 @@ public interface IClientFacade {
 	ClientDto save(ClientDto clientDto);
 	
 	List<ClientDto> findAll();
+	
+	ClientDto findById(Long id);
 }

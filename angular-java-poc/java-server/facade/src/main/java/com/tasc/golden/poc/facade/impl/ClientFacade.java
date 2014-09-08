@@ -32,4 +32,9 @@ public class ClientFacade implements IClientFacade {
 		}
 		return rlist;
 	}
+	
+	@Override
+	public ClientDto findById(Long id) {
+		return this.mapper.map(this.clientBusiness.findById(id), ClientDto.class);
+	}
 }

@@ -51,4 +51,15 @@ class ClientBusinessUnitSpec extends Specification {
 			rlist != null;
 			rlist.size() == 1;
 	}
+	
+	def "find one by id"() {
+		setup:
+			this.clientBusiness.@clientRepo = [findOne: {[name: "Bobby"] as Client}] as IClientRepo;
+		
+		when:
+			def client = this.clientBusiness.findById(1L);
+		
+		then:
+			client != null;
+	}
 }

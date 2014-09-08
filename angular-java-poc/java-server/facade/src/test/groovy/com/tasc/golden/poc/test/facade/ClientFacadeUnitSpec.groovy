@@ -59,4 +59,16 @@ class ClientFacadeUnitSpec extends Specification {
 			rlist != null;
 			rlist.size() == 1;
 	}
+	
+	def "find one by id"() {
+		setup:
+			this.clientFacade.@clientBusiness = [findById: {[id: 1L, name:"Bobby"] as Client} ] as IClientBusiness;
+			this.clientFacade.@mapper = new DozerBeanMapper();
+			
+		when:
+			def clientDto = this.clientFacade.findById(1L);
+		
+		then:
+			clientDto != null;
+	}
 }
