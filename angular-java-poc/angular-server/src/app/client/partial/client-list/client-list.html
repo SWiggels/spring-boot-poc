@@ -1,0 +1,23 @@
+
+<hr/>
+<div>
+	<a class="btn btn-primary" ui-sref="clientMain.client-edit({id: -1})" role="button">New</a>
+</div>
+<hr/>
+<div>
+	<table class="table table-hover">
+		<tr>
+			<th>
+				Name
+			</th>
+		</tr>
+		<tr ng-repeat="client in clients">
+			<td>
+				<a ui-sref="clientMain.client-edit({id: client.id})" role="button">{{client.name}}</a>	
+			</td>
+		</tr>
+	</table>
+
+</div> 
+
+
