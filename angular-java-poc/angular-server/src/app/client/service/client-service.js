@@ -20,7 +20,14 @@ angular.module('clientModule').factory('clientService',function($http, $q) {
 		});
 
 		return deferred.promise;
-	}
+	};
+
+	clientService.save = function(data, callback) {
+		$http.post('http://localhost:8080/api/client/save', data).success(function() {
+			callback();		
+		});
+		
+	};
 
 	return clientService;
 });

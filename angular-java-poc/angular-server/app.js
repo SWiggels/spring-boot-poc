@@ -16,7 +16,7 @@ angular.module('golden').run(function($rootScope) {
         var phase = $rootScope.$$phase;
         if (phase === '$apply' || phase === '$digest') {
             if (fn && (typeof(fn) === 'function')) {
-                fn();
+                 fn();
             }
         } else {
             this.$apply(fn);

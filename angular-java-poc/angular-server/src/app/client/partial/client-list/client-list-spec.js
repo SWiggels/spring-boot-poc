@@ -5,8 +5,8 @@ describe('ClientListCtrl', function() {
 	var scope,ctrl;
 
     beforeEach(inject(function($rootScope, $controller) {
-      scope = $rootScope.$new();
-      ctrl = $controller('ClientListCtrl', {$scope: scope});
+		scope = $rootScope.$new();
+		ctrl = $controller;
     }));	
 
 	it('should ...', inject(function() {

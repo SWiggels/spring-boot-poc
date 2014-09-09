@@ -1,11 +1,23 @@
-describe('clientService', function() {
+describe('Client services', function() {
 
-  beforeEach(module('clientModule'));
+	var $httpBackend, clientService;
 
-  it('should ...', inject(function(clientService) {
+	beforeEach(module('clientModule'));
 
-	//expect(clientService.doSomething()).toEqual('something');
+	beforeEach(inject(function(_$httpBackend_, clientService) {
+     // $httpBackend = _$httpBackend_;
+      //clientService = clientService;
+      //$httpBackend.expectGET('http://localhost:8080/api/clients').
+       //   respond([{name: '1'}, {name: '2'}]);
 
-  }));
+    }));
+	
 
+	it('should call crudListMethods', function() {
+		//clientService.findAll();
+		//$httpBackend.flush();
+
+	});
+
+ 
 });
