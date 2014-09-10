@@ -14,7 +14,7 @@ buildscript {
 // Settings for all modules
 allprojects {
 
-    group = 'com.tasc'
+    group = 'com.tasc.golden'
 
     version = '0.0.1'
 
@@ -25,15 +25,15 @@ allprojects {
 			url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
     }
-}
 
-// Settings for all submodules
-subprojects {
     apply plugin: 'idea'
     apply plugin: 'eclipse'
     apply plugin: 'java'
 	apply plugin: 'groovy'
     apply plugin: 'spring-boot'
+	bootRepackage {
+		mainClass = 'com.tasc.golden.Application'
+	}
 
     sourceCompatibility = 1.7
     targetCompatibility = 1.7

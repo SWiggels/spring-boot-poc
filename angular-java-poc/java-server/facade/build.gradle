@@ -5,4 +5,7 @@ dependencies {
 	
 	String dozerVersion			= "5.5.1"
 	compile ("net.sf.dozer:dozer:$dozerVersion")
+	
+	bootRepackage.enabled = false;
+	bootRun.enabled = false;
 }

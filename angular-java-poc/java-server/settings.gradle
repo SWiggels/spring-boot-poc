@@ -1,5 +1,6 @@
 rootProject.name = 'tasc-golden'
 
+include 'app'
 include 'dto'
 include 'entity'
 include 'repository'
