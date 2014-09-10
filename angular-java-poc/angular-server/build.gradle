@@ -1,0 +1,37 @@
+def isWindows = System.getProperty('os.name').toLowerCase().contains('windows')
+
+buildscript {
+
+     repositories {	
+	    mavenCentral()	
+    }
+
+}
+
+repositories {	
+	mavenCentral()	
+}
+
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+dependencies {
+
+}
+
+task gradleTest(type: Exec) {
+
+if( isWindows) {
+    	commandLine 'cmd' , '/c' ,'grunt', 'test'	
+	}else {
+		commandLine 'grunt', 'test'	
+	}
+}
+
+test {
+	it.dependsOn gradleTest
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
