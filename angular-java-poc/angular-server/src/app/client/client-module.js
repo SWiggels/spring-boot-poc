@@ -6,7 +6,7 @@ angular.module('clientModule', [
 
 angular.module('clientModule').config(function($stateProvider, $urlRouterProvider) {
 
-    $stateProvider.state('clientMain.client-list', {
+    $stateProvider.state('client-list', {
         url: '/clients',
         templateUrl: 'src/app/client/partial/client-list/client-list.html',
         controller: 'ClientListCtrl',
@@ -16,7 +16,7 @@ angular.module('clientModule').config(function($stateProvider, $urlRouterProvide
 		    }
 		}
     });
-    $stateProvider.state('clientMain.client-edit', {
+    $stateProvider.state('client-edit', {
         url: '/client/:id',
         templateUrl: 'src/app/client/partial/client-edit/client-edit.html',
         controller: 'ClientEditCtrl',

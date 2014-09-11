@@ -20,16 +20,15 @@
 // });
 
 var golden = angular.module('golden', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'clientModule', 'participantModule', 'myModule']);
-angular.module('golden').config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/client');
-});
 
-var clientModule = angular.module('myModule', []);
-angular.element(document).ready(function() {
-    
-});
 
 angular.element(document).ready(function() {
-    angular.bootstrap(document.getElementById("app1"), ['golden']);
-    angular.bootstrap(document.getElementById("app2"), ['myModule']);
+    angular.module('myModule').config(function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/main');
+    });
+    angular.module('clientModule').config(function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/clients');
+    });
+    angular.bootstrap(document.getElementById("app1"), ['myModule']);
+    angular.bootstrap(document.getElementById("app2"), ['clientModule']);
 });
