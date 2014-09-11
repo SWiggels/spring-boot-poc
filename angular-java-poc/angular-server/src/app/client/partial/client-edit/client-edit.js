@@ -1,4 +1,4 @@
-angular.module('clientModule').controller('ClientEditCtrl',function($scope, client, $state, clientService){
+angular.module('clientModule').controller('ClientEditCtrl', function($scope, client, $state, clientService) {
 
 	$scope.client = client;
 

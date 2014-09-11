@@ -1,14 +1,18 @@
-<hr/>
+<div class="col-md-12">
+	<div ui-view="menu"></div>
+</div>
 <div class="col-md-12">
 
 	<form role="form" ng-submit="submit()">
 
 		<div class="form-group">
-			<label for="nameTxt">Name</label>
-			<input type="text" class="form-control" id="nameTxt" placeholder="Name" ng-model="client.name">
+			<label for="nameTxt">Name</label> <input type="text"
+				class="form-control" id="nameTxt" placeholder="Name"
+				ng-model="client.name">
 		</div>
 		<div>
-			<input type="submit" id="submit" value="Submit" class="btn btn-primary"/>
+			<input type="submit" id="submit" value="Submit"
+				class="btn btn-primary" />
 		</div>
 	</form>
 </div>

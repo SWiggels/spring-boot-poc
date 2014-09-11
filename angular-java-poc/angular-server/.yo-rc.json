@@ -30,6 +30,14 @@
       {
         "name": "myModule",
         "file": "src\\app\\mymodule\\my-module.js"
+      },
+      {
+        "name": "baseModule",
+        "file": "src\\app\\baseModule\\baseModule.js"
+      },
+      {
+        "name": "menuModule",
+        "file": "src\\app\\menuModule\\menuModule.js"
       }
     ]
   }
