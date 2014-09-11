@@ -1,9 +1,18 @@
-<div class="jumbotron text-center">
-    <h1>The Main Page</h1>
-    <p>This page demonstrates <span class="text-danger">nested</span> views.</p>  
-
-    <a ui-sref=".first" class="btn btn-primary">First</a>
-    <a ui-sref=".second" class="btn btn-danger">Second</a>
+<div class="col-md-12">
+	<div ui-view="menu"></div>
 </div>
-
-<div ui-view></div>
+<div class="col-md-12">
+	<div class="jumbotron text-center">
+	    <h1>Some content</h1>
+	    <p>This page demonstrates <span class="text-danger">nested</span> views.</p>  
+	    <a ui-sref=".first" class="btn btn-primary">First</a>
+	    <a ui-sref=".second" class="btn btn-danger">Second</a>
+	</div>
+	<div class="col-md-12">
+		<div class="row">
+		    <div class="col-sm-12">
+		        <div ui-view></div>
+		    </div>
+		</div>	
+	</div>
+</div>

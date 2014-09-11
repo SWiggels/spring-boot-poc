@@ -6,11 +6,6 @@ angular.module('clientModule', [
 
 angular.module('clientModule').config(function($stateProvider, $urlRouterProvider) {
 
-	$stateProvider.state('clientMain', {
-        url: '/clientMain',
-        controller: "ClientmainCtrl",
-        templateUrl: 'src/app/client/partial/clientMain/clientMain.html'
-    });
     $stateProvider.state('clientMain.client-list', {
         url: '/clients',
         templateUrl: 'src/app/client/partial/client-list/client-list.html',
