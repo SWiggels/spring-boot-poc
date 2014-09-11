@@ -1,0 +1,11 @@
+dependencies {
+    compile project(':entity')
+	compile project(':business')
+	compile project(':dto')
+	
+	String dozerVersion			= "5.5.1"
+	compile ("net.sf.dozer:dozer:$dozerVersion")
+	
+	bootRepackage.enabled = false;
+	bootRun.enabled = false;
+}

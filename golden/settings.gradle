@@ -1,0 +1,8 @@
+rootProject.name = 'tasc-golden'
+
+include 'dto'
+include 'entity'
+include 'repository'
+include 'business'
+include 'facade'
+include 'rest'

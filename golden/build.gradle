@@ -1,0 +1,81 @@
+buildscript {
+    repositories { 
+    
+        jcenter()
+   
+        // To use mavenCentral uncomment the following line
+        // mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.5.RELEASE")
+    }
+}
+
+// Settings for all modules
+allprojects {
+
+    group = 'com.tasc'
+
+    version = '0.0.1'
+
+    repositories() {
+		mavenCentral()
+        
+        maven {
+			url 'https://oss.sonatype.org/content/repositories/snapshots'
+        }
+    }
+}
+
+// Settings for all submodules
+subprojects {
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: 'java'
+	apply plugin: 'groovy'
+    apply plugin: 'spring-boot'
+
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+	
+	bootRepackage.enabled = false;
+	bootRun.enabled = false;
+
+    dependencies {
+		
+		String lombokVersion		= "1.14.6"
+        String springBootVersion 	= "1.1.6.RELEASE"
+		String groovyAllVersion		= "2.3.6"
+		
+        compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+		compile ("org.codehaus.groovy:groovy-all:$groovyAllVersion")
+		compile ("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
+		// compile ("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
+        compile ("org.projectlombok:lombok:$lombokVersion")
+		
+		String junitVersion 			= "4.11"
+		String spockVersion				= "0.7-groovy-2.0"
+		String jsonPathAssertVersion	= "0.8.1"
+		
+		testCompile ("junit:junit:$junitVersion")
+		testCompile ("org.spockframework:spock-core:$spockVersion") {
+			exclude module: 'groovy-all'
+		}
+		testCompile ("org.spockframework:spock-spring:$spockVersion")
+
+		testCompile ("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+		testCompile ("com.jayway.jsonpath:json-path-assert:$jsonPathAssertVersion")
+    }
+	
+	sourceSets {
+		integration {
+			groovy.srcDir file('src/integration/groovy')
+			resources.srcDir file('src/integration/resources')
+		}
+	}
+}
+
+task wrapper(type: Wrapper) {
+
+    gradleVersion = '2.0'
+}

@@ -1,0 +1,4 @@
+dependencies {
+	bootRepackage.enabled = false;
+	bootRun.enabled = false;
+}

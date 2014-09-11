@@ -1,0 +1,8 @@
+task test1() {
+	
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
+

@@ -1,0 +1,7 @@
+dependencies {
+    compile project(':entity')
+	compile project(':repository')
+	
+	bootRepackage.enabled = false;
+	bootRun.enabled = false;
+}
