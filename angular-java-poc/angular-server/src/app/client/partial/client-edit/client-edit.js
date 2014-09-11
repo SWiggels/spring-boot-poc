@@ -4,7 +4,7 @@ angular.module('clientModule').controller('ClientEditCtrl', function($scope, cli
 
 	$scope.submit = function() {
 		clientService.save($scope.client, function() {
-			$state.go('client-list');
+			$state.go('base.clients');
 		});
 	};
 });

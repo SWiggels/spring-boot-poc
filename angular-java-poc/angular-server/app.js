@@ -1,5 +1,5 @@
 angular.module('golden', [ 'ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'clientModule', 'participantModule',
-		'myModule', 'baseModule', 'menuModule' ]);
+		'myModule', 'baseModule']);
 
 angular.module('golden').config(function($stateProvider, $urlRouterProvider) {
 	$urlRouterProvider.otherwise('/base');

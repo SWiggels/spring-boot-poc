@@ -1,8 +1,5 @@
 <div class="col-md-12">
-	<div ui-view="menu"></div>
-</div>
-<div class="col-md-12">
-	<a class="btn btn-primary" ui-sref="client-edit({id: -1})"
+	<a class="btn btn-primary" ui-sref="base.clientEdit({id: -1})"
 		role="button">New</a>
 </div>
 <div class="col-md-12">
@@ -11,11 +8,8 @@
 			<th>Name</th>
 		</tr>
 		<tr ng-repeat="client in clients">
-			<td><a ui-sref="client-edit({id: client.id})" role="button">{{client.name}}</a>
+			<td><a ui-sref="base.clientEdit({id: client.id})" role="button">{{client.name}}</a>
 			</td>
 		</tr>
 	</table>
-
 </div>
-
-
