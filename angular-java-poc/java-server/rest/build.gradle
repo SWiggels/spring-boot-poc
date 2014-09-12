@@ -1,10 +1,8 @@
 dependencies {
 	compile project(':facade')
-	compile project(':dto')
+	compile project(':batch')
 	
 	String jacksonVersion		= "2.3.1"
 	compile ("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-	
-	bootRepackage.enabled = false;
-	bootRun.enabled = false;
+
 }

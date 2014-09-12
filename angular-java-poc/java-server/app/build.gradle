@@ -1,6 +1,4 @@
 dependencies {
 	compile project(':rest')
-	
-	bootRepackage.enabled = true;
-	bootRun.enabled = true;
+
 }
