@@ -3,7 +3,7 @@ angular.module('clientModule', [
 	'ui.utils', 
 	'ui.router', 
 	'ngAnimate' 
-	]);
+]);
 
 angular.module('clientModule').config(function($stateProvider, $urlRouterProvider) {
 

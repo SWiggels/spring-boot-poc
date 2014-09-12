@@ -3,7 +3,7 @@ angular.module('baseModule', [
 	'ui.utils', 
 	'ui.router', 
 	'ngAnimate' 
-	]);
+]);
 
 angular.module('baseModule').config(function($stateProvider) {
 
