@@ -11,7 +11,7 @@ describe('Client services', function() {
        //   respond([{name: '1'}, {name: '2'}]);
 
     }));
-	 
+	
 
 	it('should call crudListMethods', function() {
 		//clientService.findAll();
