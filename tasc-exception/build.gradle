@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenLocal ()
+    }
+
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+jar {
+    baseName = 'tasc-exception'
+    version =  '1.0.0-SNAPSHOT'
+}
+
+repositories {
+    mavenCentral ()
+}
+
+dependencies {
+
+	String groovyAllVersion		= "2.3.6"
+	
+    compile ("org.codehaus.groovy:groovy-all:$groovyAllVersion")
+	
+	String junitVersion 			= "4.11"
+	String spockVersion				= "0.7-groovy-2.0"
+	String jsonPathAssertVersion	= "0.8.1"
+	
+    testCompile ("junit:junit:$junitVersion")
+    testCompile ("org.spockframework:spock-core:$spockVersion") {
+        exclude module: 'groovy-all'
+    }
+    testCompile ("org.spockframework:spock-spring:$spockVersion")
+    testCompile ("com.jayway.jsonpath:json-path-assert:$jsonPathAssertVersion")
+
+}
+
+task wrapper (type: Wrapper) {
+    gradleVersion = '2.0'
+}
