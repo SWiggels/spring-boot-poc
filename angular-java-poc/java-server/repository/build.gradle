@@ -8,6 +8,5 @@ dependencies {
 	compile ("org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion")
 	compile ("com.h2database:h2:$h2Version")
 	
-	bootRepackage.enabled = false;
-	bootRun.enabled = false;
+
 }
