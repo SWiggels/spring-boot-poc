@@ -1,8 +1,4 @@
-spring-boot-poc
+TASC Exceptions
 ===============
-Don't forget to download lombok and install in eclipse.
-
-`gradle wrapper
-gradlew build
-gradlew eclipse`
+This is the main jar for the TASC exceptions component.
 
