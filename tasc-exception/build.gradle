@@ -9,7 +9,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 jar {
-    baseName = 'tasc-exception'
+    baseName = 'tasc.exception'
     version =  '1.0.0-SNAPSHOT'
 }
 

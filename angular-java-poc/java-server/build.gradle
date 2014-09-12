@@ -1,9 +1,7 @@
 buildscript {
     repositories { 
-    
         jcenter()
-   
-        // To use mavenCentral uncomment the following line
+		// To use mavenCentral uncomment the following line
         // mavenCentral()
     }
     dependencies {
@@ -24,6 +22,9 @@ allprojects {
         maven {
 			url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
+		flatDir {
+			dirs '../tmpLibs'
+		}
     }
 
     apply plugin: 'idea'
@@ -43,6 +44,8 @@ subprojects() {
 
 	bootRepackage.enabled = false;
 	bootRun.enabled = false;
+	
+	
 
     dependencies {
 		
@@ -55,6 +58,8 @@ subprojects() {
 		compile ("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
 		// compile ("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
         compile ("org.projectlombok:lombok:$lombokVersion")
+		
+		compile name: 'tasc.exception-1.0.0-SNAPSHOT'
 		
 		String junitVersion 			= "4.11"
 		String spockVersion				= "0.7-groovy-2.0"
