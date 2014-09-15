@@ -6,8 +6,12 @@ describe('ClientEditCtrl', function() {
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-     // ctrl = $controller('ClientEditCtrl', {$scope: scope});
-    }));	
+      ctrl = $controller('ClientEditCtrl', {$scope: scope, client: {}});
+    }));
+
+    it('should have a ClientEditCtrl controller',  function() {
+        expect(ctrl).toBeDefined();
+    });
 
 	it('should ...', inject(function() {
 

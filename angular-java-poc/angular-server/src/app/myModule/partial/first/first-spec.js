@@ -7,7 +7,11 @@ describe('FirstCtrl', function() {
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
       ctrl = $controller('FirstCtrl', {$scope: scope});
-    }));	
+    }));
+
+    it('should have a FirstCtrl controller',  function() {
+        expect(ctrl).toBeDefined();
+    });
 
 	it('should ...', inject(function() {
 

@@ -7,7 +7,11 @@ describe('ClientListCtrl', function() {
     beforeEach(inject(function($rootScope, $controller) {
 		scope = $rootScope.$new();
 		ctrl = $controller;
-    }));	
+    }));
+
+    it('should have a ClientListCtrl controller',  function() {
+        expect(ctrl).toBeDefined();
+    });
 
 	it('should ...', inject(function() {
 

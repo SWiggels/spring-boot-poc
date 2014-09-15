@@ -12,10 +12,10 @@ angular.module('myModule').config(function ($stateProvider) {
         controller: 'MainCtrl',
         views: {
             '': {
-                templateUrl: 'src/app/mymodule/partial/main/main.html'
+                templateUrl: 'src/app/myModule/partial/main/main.html'
             },
             '@main': {
-                templateUrl: 'src/app/mymodule/partial/first/first.html'
+                templateUrl: 'src/app/myModule/partial/first/first.html'
             }
         }
     });
@@ -23,7 +23,7 @@ angular.module('myModule').config(function ($stateProvider) {
         url: '/another',
         views: {
             '': {
-                templateUrl: 'src/app/mymodule/partial/another/another.html'
+                templateUrl: 'src/app/myModule/partial/another/another.html'
             },
             'columnOne@base.another': {
                 template: 'Some content -1'
@@ -36,11 +36,11 @@ angular.module('myModule').config(function ($stateProvider) {
     $stateProvider.state('base.main.first', {
         url: '/first',
         controller: 'FirstCtrl',
-        templateUrl: 'src/app/mymodule/partial/first/first.html'
+        templateUrl: 'src/app/myModule/partial/first/first.html'
     });
     $stateProvider.state('base.main.second', {
         url: '/second/:id',
-        templateUrl: 'src/app/mymodule/partial/second/second.html',
+        templateUrl: 'src/app/myModule/partial/second/second.html',
         controller: 'SecondCtrl',
         resolve: {
             myObject: function ($stateParams) {
