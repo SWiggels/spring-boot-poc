@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tasconline.golden</groupId>
+  <artifactId>tasc-golden</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>golden</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- Inherit defaults from Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.1.6.RELEASE</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>dto</module>
+		<module>entity</module>
+		<module>repository</module>
+		<module>business</module>
+		<module>facade</module>
+		<module>rest</module>
+		<module>batch</module>
+		<module>app</module>
+	</modules>
+
+</project>

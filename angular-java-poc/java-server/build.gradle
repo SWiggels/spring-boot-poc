@@ -2,7 +2,7 @@ buildscript {
     repositories { 
         jcenter()
 		// To use mavenCentral uncomment the following line
-        // mavenCentral()
+        mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.5.RELEASE")
@@ -27,6 +27,7 @@ allprojects {
 		}
     }
 
+	apply plugin: 'maven'
     apply plugin: 'idea'
     apply plugin: 'eclipse'
     apply plugin: 'java'
@@ -36,8 +37,25 @@ allprojects {
 		mainClass = 'com.tasc.golden.Application'
 	}
 
-    sourceCompatibility = 1.7
-    targetCompatibility = 1.7
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+	
+	group = 'com.company.root'
+	// artifactId is taken by default, from folder name
+	version = '0.0.1-SNAPSHOT'
+
+	task writeNewPom << {
+		pom {
+			project {
+				inceptionYear '2014'	
+				parent {
+					groupId 'com.tasconline.golden'
+					artifactId 'tasc-golden'
+					version '0.0.1-SNAPSHOT'
+				}				
+			}
+		}.writeTo("pom.xml")
+	}
 }
     
 subprojects() {
