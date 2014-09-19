@@ -6,13 +6,13 @@
   <artifactId>dto</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <inceptionYear>2014</inceptionYear>
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+  
+  <parent>
+	<groupId>com.tasconline.golden</groupId>
+	<artifactId>tasc-golden</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+	
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
