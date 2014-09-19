@@ -54,7 +54,7 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>com.company.root</groupId>
+      <groupId>com.tasconline.golden</groupId>
       <artifactId>rest</artifactId>
       <version>0.0.1-SNAPSHOT</version>
       <scope>compile</scope>

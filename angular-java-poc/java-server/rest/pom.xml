@@ -49,7 +49,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.company.root</groupId>
+			<groupId>com.tasconline.golden</groupId>
 			<artifactId>facade</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
@@ -61,7 +61,7 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.company.root</groupId>
+			<groupId>com.tasconline.golden</groupId>
 			<artifactId>batch</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>compile</scope>
