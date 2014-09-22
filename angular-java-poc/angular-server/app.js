@@ -4,7 +4,6 @@ angular.module('golden', [
     'ui.router',
     'ngAnimate',
     'clientModule',
-    'participantModule',
     'myModule',
     'baseModule'
 ]);

@@ -38,7 +38,7 @@ describe('Client services', function() {
 		expect(resolvedValue[1].name).toBe("You");
 	}));
 
- 	it('should find a client by id', inject(function($rootScope){
+	it('should find a client by id', inject(function($rootScope){
 		httpBackend.whenGET("http://localhost:8080/api/client?id=2").respond(
 			{"id":2,"name":"You"}
 		);
