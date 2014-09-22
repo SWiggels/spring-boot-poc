@@ -37,8 +37,8 @@ allprojects {
 		mainClass = 'com.tasc.golden.Application'
 	}
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
 	
 	group = 'com.company.root'
 	// artifactId is taken by default, from folder name

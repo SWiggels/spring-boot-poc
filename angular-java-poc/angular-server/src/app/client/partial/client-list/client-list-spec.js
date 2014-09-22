@@ -2,21 +2,20 @@ describe('ClientListCtrl', function() {
 
 	beforeEach(module('clientModule'));
 
-	var scope,ctrl;
+	var scope,ctrl, clients;
 
     beforeEach(inject(function($rootScope, $controller) {
 		scope = $rootScope.$new();
-		ctrl = $controller;
+		clients = [];
+		ctrl = $controller('ClientListCtrl', {$scope: scope, clients:clients});
     }));
 
     it('should have a ClientListCtrl controller',  function() {
         expect(ctrl).toBeDefined();
     });
 
-	it('should ...', inject(function() {
-
-		expect(1).toEqual(1);
-		
+	it('should inject the clients into the controller and bind to scope', inject(function() { 
+		expect(scope.clients).not.toBe(null);
 	}));
 
 });

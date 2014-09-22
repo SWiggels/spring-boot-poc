@@ -9,7 +9,7 @@ angular.module('clientModule').factory('clientService',function($http, $q) {
 				deferred.resolve(data);
 		});
 
-		return deferred.promise;
+		return deferred.promise; 
 	};
 
 	clientService.findById = function(id) {
@@ -23,8 +23,9 @@ angular.module('clientModule').factory('clientService',function($http, $q) {
 	};
 
 	clientService.save = function(data, callback) {
-		$http.post('http://localhost:8080/api/client/save', data).success(function() {
-			callback();		
+		$http.post('http://localhost:8080/api/client/save', data).
+			success(function() {
+				callback();		
 		});
 		
 	};
