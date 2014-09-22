@@ -8,14 +8,14 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.web.context.WebApplicationContext
 
-import com.tasc.golden.poc.test.Application;
+import com.tasc.golden.poc.MockRestApplication;
 
 import spock.lang.Specification
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 
 @WebAppConfiguration
-@ContextConfiguration(classes = [Application.class])
+@ContextConfiguration(classes = [MockRestApplication.class])
 public class HelloWorldRestSpecTests extends Specification {
 
 	@Autowired
@@ -31,7 +31,7 @@ public class HelloWorldRestSpecTests extends Specification {
 	def 'say hello to the world.'() throws Exception { 
 
 		expect:
-			this.mockMvc.perform(get("/helloworld").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
+			this.mockMvc.perform(get("/api/helloworld").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
 				.andExpect(status().isOk())
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 				.andExpect(jsonPath('$.content').value("Hello, World!"))
@@ -40,7 +40,7 @@ public class HelloWorldRestSpecTests extends Specification {
 	def 'Say hello to the crew of the USS Enterprise.'() throws Exception {
 
 		expect:
-			this.mockMvc.perform(get("/helloworld").param('name', name).accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
+			this.mockMvc.perform(get("/api/helloworld").param('name', name).accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
 				.andExpect(status().isOk())
 				.andExpect(content().contentType("application/json;charset=UTF-8"))
 				.andExpect(jsonPath('$.content').value(content))
