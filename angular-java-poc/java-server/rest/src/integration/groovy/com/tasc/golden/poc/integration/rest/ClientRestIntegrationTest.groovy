@@ -43,6 +43,7 @@ class ClientRestIntegrationTest extends Specification {
 	
 	@DirtiesContext
 	def "save a new client"() {
+		
 		setup:
 			String clientJson = new JsonBuilder( [name:'bob'] as ClientDto );
 
@@ -59,6 +60,7 @@ class ClientRestIntegrationTest extends Specification {
 	
 	@DirtiesContext
 	def "saving a client with an empty name should fire an exception"() {
+		
 		setup:
 			String clientJson = new JsonBuilder( [] as ClientDto );
 
@@ -111,8 +113,8 @@ class ClientRestIntegrationTest extends Specification {
 	def "get a client by id" () {
 		
 		setup:
-			clientRepo.save([name:'Bob'] as Client);
-			clientRepo.save([name:'Spock'] as Client);
+			this.clientRepo.save([name:'Bob'] as Client);
+			this.clientRepo.save([name:'Spock'] as Client);
 	
 		when:
 			MvcResult mvcResult = this.mockMvc.perform(
