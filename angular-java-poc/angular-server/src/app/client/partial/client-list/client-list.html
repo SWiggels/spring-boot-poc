@@ -1,6 +1,5 @@
 <div class="col-md-12">
-	<a class="btn btn-primary" ui-sref="base.clientEdit({id: -1})"
-		role="button">New</a>
+	<a class="btn btn-primary" ui-sref="base.clientEdit({id: -1})" role="button">New</a>
 </div>
 <div class="col-md-12">
 	<table class="table table-hover">
@@ -8,7 +7,8 @@
 			<th>Name</th>
 		</tr>
 		<tr ng-repeat="client in clients">
-			<td><a ui-sref="base.clientEdit({id: client.id})" role="button">{{client.name}}</a>
+			<td>
+				<a ui-sref="base.clientEdit({id: client.id})" role="button">{{client.name}}</a>
 			</td>
 		</tr>
 	</table>
