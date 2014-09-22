@@ -222,8 +222,12 @@ module.exports = function (grunt) {
           createFolderGlobs('*-spec.js')
         ],
         logLevel:'ERROR',
-        reporters:['mocha'],
-        autoWatch: false, //watching is handled by grunt-contrib-watch
+        reporters:['dots'],
+        junitReporter: {
+          outputFile: 'test-results.xml',
+          suite: ''
+        },
+        autoWatch: true, //watching is handled by grunt-contrib-watch
         singleRun: true
       },
       all_tests: {
