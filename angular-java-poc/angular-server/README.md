@@ -4,6 +4,9 @@
 
 ![Simple](/angular-java-poc/angular-server/docs/imgs/simple.jpg?raw=true "Simple Image")
 
+Some additional docs
+![SomeAdditionalDocs](/angular-java-poc/angular-server/docs/INTRO.md "Simple MD")
+
 ## A Few Notes
 
 Note that this version of the app uses  AngularUI Router [ui-router](https://github.com/angular-ui/ui-router), as a result it is recommended that you use the cli for adding purpose to the app.
