@@ -1,14 +1,14 @@
-angular.module('clientModule').factory('clientService',function($http, $q) {
+angular.module('clientModule').factory('clientService',function($http, $q, $cookies) {
 
 	var clientService = {};
+	//$http.defaults.headers.common.Authorization = "Basic bGV0c25vc2g6QkFEUEFTU1dPUkQ=";
 
 	clientService.findAll = function() {
 		var deferred = $q.defer();
-		$http.get('http://localhost:8080/api/clients').
+		$http.get('http://localhost:8080/api/clients'). 
 			success(function(data) {
 				deferred.resolve(data);
 		});
-
 		return deferred.promise; 
 	};
 
@@ -18,7 +18,6 @@ angular.module('clientModule').factory('clientService',function($http, $q) {
 			success(function(data) {
 				deferred.resolve(data);
 		});
-
 		return deferred.promise;
 	};
 
@@ -27,7 +26,6 @@ angular.module('clientModule').factory('clientService',function($http, $q) {
 			success(function() {
 				callback();		
 		});
-		
 	};
 
 	return clientService;

@@ -222,7 +222,7 @@ module.exports = function (grunt) {
           createFolderGlobs('*-spec.js')
         ],
         logLevel:'ERROR',
-        reporters:['dots'],
+        reporters:['dots', 'junit'],
         junitReporter: {
           outputFile: 'test-results.xml',
           suite: ''

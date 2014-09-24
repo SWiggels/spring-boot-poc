@@ -6,6 +6,7 @@ import com.tasc.golden.poc.dto.SimpleRestResponse;
 import com.tasc.golden.poc.facade.IClientFacade;
 import com.tasc.golden.poc.rest.IClientRest;
 import com.tasc.golden.poc.rest.impl.ClientRest;
+import org.springframework.security.crypto.codec.Base64;
 
 import spock.lang.Specification;
 
@@ -15,6 +16,20 @@ class ClientRestUnitSpec extends Specification {
 	
 	def setup() {
 		this.clientRest = new ClientRest();
+	}
+	
+	
+	def "get me the headers"() {
+		setup:
+			String header = "user" + ":" + "password";
+			
+		when:
+			byte[] encodedAuthorisation = Base64.encode(header.getBytes());
+			println new String(encodedAuthorisation);
+		//dXNlcjpwYXNzd29yZA==
+			//Basic dXNlcjpwYXNzd29yZA==
+		then:
+			1 == 1;
 	}
 	
 	def "simple save test"() {

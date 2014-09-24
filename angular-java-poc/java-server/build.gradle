@@ -1,5 +1,6 @@
 buildscript {
     repositories { 
+		mavenLocal()
         jcenter()
 		// To use mavenCentral uncomment the following line
         mavenCentral()
@@ -22,6 +23,11 @@ allprojects {
         maven {
 			url 'https://oss.sonatype.org/content/repositories/snapshots'
         }
+		
+		maven {
+			url "http://clojars.org/repo"
+		}
+		
 		flatDir {
 			dirs '../tmpLibs'
 		}
@@ -74,7 +80,7 @@ subprojects() {
         compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
 		compile ("org.codehaus.groovy:groovy-all:$groovyAllVersion")
 		compile ("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
-		// compile ("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
+		compile ("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
         compile ("org.projectlombok:lombok:$lombokVersion")
 		
 		compile name: 'tasc.exception-1.0.0-SNAPSHOT'
