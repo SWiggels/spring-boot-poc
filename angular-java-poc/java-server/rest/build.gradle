@@ -10,6 +10,6 @@ dependencies {
 	compile ("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
 	compile ("redis.clients:jedis:$jedisVersion")
 	
-	testCompile ("redis.embedded:embedded-redis:$embeddedRedisVersion")
+	compile ("redis.embedded:embedded-redis:$embeddedRedisVersion")
 
 }

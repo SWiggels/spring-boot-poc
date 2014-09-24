@@ -24,7 +24,7 @@ public class RedisCsrfTokenRepository implements CsrfTokenRepository {
 
     private RedisServer redisServer;
 
-    private Jedis tokenRepository;
+    private BinaryJedisCommands tokenRepository;
 
     public RedisCsrfTokenRepository() throws Exception {
         this.redisServer = new RedisServer(6379);
