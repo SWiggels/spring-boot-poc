@@ -2,7 +2,7 @@
 
 > Template set up in order to develop angularjs applications using node as a proxy server.
 
-![Simple](/docs/imgs/simple.jpg?raw=true "Simple Image")
+![Simple](/angular-java-poc/angular-server/docs/imgs/simple.jpg?raw=true "Simple Image")
 
 ## A Few Notes
 
