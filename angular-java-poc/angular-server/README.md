@@ -2,6 +2,8 @@
 
 > Template set up in order to develop angularjs applications using node as a proxy server.
 
+(Intro){/docs/INTRO.md}
+
 ## A Few Notes
 
 Note that this version of the app uses  AngularUI Router [ui-router](https://github.com/angular-ui/ui-router), as a result it is recommended that you use the cli for adding purpose to the app.
