@@ -24,14 +24,6 @@
         "file": "src\\app\\client\\client-module.js"
       },
       {
-        "name": "participantModule",
-        "file": "src\\app\\participant\\participant-module.js"
-      },
-      {
-        "name": "myModule",
-        "file": "src\\app\\myModule\\my-module.js"
-      },
-      {
         "name": "baseModule",
         "file": "src\\app\\baseModule\\baseModule.js"
       },

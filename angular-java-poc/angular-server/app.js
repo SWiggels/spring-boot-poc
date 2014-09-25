@@ -3,8 +3,7 @@ angular.module('golden', [
     'ui.utils', 
     'ui.router', 
     'ngAnimate', 
-    'clientModule', 
-    'myModule', 
+    'clientModule',
     'baseModule', 
     'ngCookies', 
     'auth'
