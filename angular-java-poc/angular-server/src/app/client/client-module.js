@@ -3,7 +3,8 @@ angular.module(
 		'ui.bootstrap', 
 		'ui.utils', 
 		'ui.router', 
-		'ngAnimate' 
+		'ngAnimate',
+		'auth' 
 	]
 );
 
@@ -20,6 +21,7 @@ angular.module('clientModule').
 				}
 			}
 		});
+		
 		$stateProvider.state('base.clientEdit', {
 			url : '/client/:id',
 			templateUrl : 'src/app/client/partial/client-edit/client-edit.html',

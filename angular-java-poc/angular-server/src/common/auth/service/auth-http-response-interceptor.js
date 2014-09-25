@@ -1,12 +1,8 @@
 angular.module('auth')
 	.factory('authHttpResponseInterceptor',
-		function($q, $location, $injector,$cookies) {
-
+		function($q, $location, $injector) {
 
 	return {
-		response: function(response) {
-			return response || $q.when(response);
-		},
 		responseError: function(rejection) {
 			if (rejection.status === 401) {
                 console.log("Response Error 401",rejection);

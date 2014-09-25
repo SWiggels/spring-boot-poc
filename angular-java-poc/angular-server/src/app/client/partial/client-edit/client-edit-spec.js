@@ -1,4 +1,4 @@
-describe('ClientEditCtrl', function() {
+describe('ClientEditCtrl', function() { 
 
 	beforeEach(module('clientModule')); 
 

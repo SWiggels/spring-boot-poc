@@ -38,6 +38,10 @@
       {
         "name": "auth",
         "file": "src\\common\\auth\\auth.js"
+      },
+      {
+        "name": "appConfig",
+        "file": "src\\app\\common\\app-config\\app-config.js"
       }
     ]
   }

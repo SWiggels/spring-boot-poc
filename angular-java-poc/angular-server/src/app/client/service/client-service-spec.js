@@ -7,6 +7,7 @@ describe('Client services', function() {
 	beforeEach(inject(function($httpBackend, clientService) {
 		httpBackend = $httpBackend;
 		service = clientService;
+		//ctrl = $controller('ClientEditCtrl', {$scope: scope, client: {}, $state: stateMock, clientService:clientServiceMock});
     }));
 
     afterEach (function () {
@@ -15,7 +16,7 @@ describe('Client services', function() {
 	});
 	
 
-	it('should get 2 objects from the "Productlist" service ', inject(function($rootScope){
+	xit('should get 2 objects from the "Productlist" service ', inject(function($rootScope){
 		httpBackend.whenGET("http://localhost:8080/api/clients").respond(
 			[{"id":1,"name":"Me"},{"id":2,"name":"You"}]
 		);
@@ -38,7 +39,7 @@ describe('Client services', function() {
 		expect(resolvedValue[1].name).toBe("You");
 	}));
 
-	it('should find a client by id', inject(function($rootScope){
+	xit('should find a client by id', inject(function($rootScope){
 		httpBackend.whenGET("http://localhost:8080/api/client?id=2").respond(
 			{"id":2,"name":"You"}
 		);
@@ -58,7 +59,7 @@ describe('Client services', function() {
 		expect(resolvedValue.name).toBe("You");
 	}));
 
-	it('should save the object to the backend data store', inject(function($rootScope){
+	xit('should save the object to the backend data store', inject(function($rootScope){
 		httpBackend.whenPOST("http://localhost:8080/api/client/save", {}).respond(201, '');
 
 		var msg = 'No Callback';
