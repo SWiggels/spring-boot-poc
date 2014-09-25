@@ -16,7 +16,7 @@ angular.module('clientModule').
 			controller : 'ClientListCtrl',
 			resolve : {
 				clients : function($stateParams, clientService) {
-					return {};// clientService.findAll();
+					return clientService.findAll();
 				}
 			}
 		});
@@ -29,7 +29,7 @@ angular.module('clientModule').
 					if ($stateParams.id < 0) {
 						return {};
 					} else {
-						return {}; //clientService.findById($stateParams.id);
+						return clientService.findById($stateParams.id);
 					}
 				}
 			}	
