@@ -28,3 +28,4 @@ angular.module('golden').run(function ($rootScope, $http, $cookies) {
         }
     };
 });
+
