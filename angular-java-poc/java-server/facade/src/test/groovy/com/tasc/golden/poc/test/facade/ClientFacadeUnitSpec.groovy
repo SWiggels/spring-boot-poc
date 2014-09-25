@@ -29,6 +29,7 @@ class ClientFacadeUnitSpec extends Specification {
 			
 		then:
 			rdto != null;
+			println UUID.randomUUID().toString();
 	}
 	
 	def "returning an empty list"() {

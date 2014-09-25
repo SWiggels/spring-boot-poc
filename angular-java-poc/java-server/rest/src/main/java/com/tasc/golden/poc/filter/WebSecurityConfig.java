@@ -23,11 +23,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	http
-        .httpBasic().and()
-        .csrf().csrfTokenRepository(tokenRepository).and()
-        .authorizeRequests()
-        .antMatchers(HttpMethod.GET, "/api/**").permitAll()
-        .anyRequest().hasRole("USER");
+        .csrf()
+        	.csrfTokenRepository(tokenRepository)
+        .and()
+        	.authorizeRequests()
+        	.antMatchers("/api/**")
+        	.hasRole("USER")
+        	.anyRequest()
+        	.anonymous()
+        .and()
+        	.httpBasic();
     	
 //    	http
     	//.csrf().disable()
@@ -49,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         public void init(AuthenticationManagerBuilder auth) throws Exception {
             auth
                     .inMemoryAuthentication()
-                    .withUser("user").password("password").roles("USER");
+                    .withUser("bob@bob.com").password("password").roles("USER");
         }
 
     }

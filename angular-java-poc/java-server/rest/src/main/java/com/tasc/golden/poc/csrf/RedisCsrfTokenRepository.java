@@ -33,13 +33,15 @@ public class RedisCsrfTokenRepository implements CsrfTokenRepository {
     }
 	@Override
 	public CsrfToken generateToken(HttpServletRequest request) {
-		return new DefaultCsrfToken(RedisCsrfTokenRepository.CSRF_HEADER_NAME, RedisCsrfTokenRepository.CSRF_PARAMETER_NAME, "c8546c65-fe9e-426e-afbb-1639922d9494");
+		return new DefaultCsrfToken(
+				RedisCsrfTokenRepository.CSRF_HEADER_NAME, 
+				RedisCsrfTokenRepository.CSRF_PARAMETER_NAME, 
+				this.createNewToken()
+				);
 	}
-
-	@Override
-	public void saveToken(CsrfToken token, HttpServletRequest request, HttpServletResponse response) {
-		String key = this.getKey(request);
-        if (key == null) {
+	
+	public void saveToken(CsrfToken token, String key) {
+		if (key == null) {
             return;
         }
 
@@ -51,16 +53,21 @@ public class RedisCsrfTokenRepository implements CsrfTokenRepository {
 	}
 
 	@Override
+	public void saveToken(CsrfToken token, HttpServletRequest request, HttpServletResponse response) {
+		String key = this.getKey(request);
+		saveToken(token, key);
+	}
+
+	@Override
 	public CsrfToken loadToken(HttpServletRequest request) {
-		return this.generateToken(null);
-//		String key = getKey(request);
-//        if (key != null) {
-//            byte[] tokenString = this.tokenRepository.get(key.getBytes());
-//            if (tokenString != null) {
-//                return (CsrfToken) SerializationUtils.deserialize(tokenString);
-//            }
-//        }
-//        return null;
+		String key = getKey(request);
+        if (key != null) {
+            byte[] tokenString = this.tokenRepository.get(key.getBytes());
+            if (tokenString != null) {
+                return (CsrfToken) SerializationUtils.deserialize(tokenString);
+            }
+        }
+        return null;
 	}
 	
 	private String getKey(HttpServletRequest request) {

@@ -1,32 +1,21 @@
 angular.module('golden', [
-    'ui.bootstrap',
-    'ui.utils',
-    'ui.router',
-    'ngAnimate',
-    'clientModule',
-    'myModule',
-    'baseModule',
-    'ngCookies',
-    'spring-security-csrf-token-interceptor'
+    'ui.bootstrap', 
+    'ui.utils', 
+    'ui.router', 
+    'ngAnimate', 
+    'clientModule', 
+    'myModule', 
+    'baseModule', 
+    'ngCookies', 
+    'auth'
 ]);
 
 angular.module('golden').config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
-    $httpProvider.defaults.useXDomain = true;
-    delete $httpProvider.defaults.headers.common['X-Requested-With'];
-    // /dXNlcjpwYXNzd29yZA==
-    var auth = 'Basic ' + btoa("user:password");
-    
-    
-    $httpProvider.defaults.headers.common['Authorization'] = auth;
-    //$httpProvider.defaults.headers.common['X-CSRF-TOKEN'] = '863bd83e-0dd0-44eb-8dac-120942e4466f';
-
-    //$httpProvider.defaults.headers.common = {'Authorization':'Basic ' + btoa("user:password")};
+    $httpProvider.interceptors.push('authHttpResponseInterceptor');
     $urlRouterProvider.otherwise('/base');
 });
 
 angular.module('golden').run(function ($rootScope, $http, $cookies) {
-
-    //$http.defaults.headers.common['X-CSRF-TOKEN'] = $cookies['_csrf'];
 
     $rootScope.safeApply = function (fn) {
         var phase = $rootScope.$$phase;

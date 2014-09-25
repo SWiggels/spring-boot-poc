@@ -109,10 +109,10 @@ class RedisCsrfTokenRepositoryUnitSpec extends Specification {
 			CsrfToken rtoken = this.csrfTokenRepository.loadToken( request);
 			
 		then:
-			0 * this.csrfTokenRepository.@tokenRepository.get(_) >> SerializationUtils.serialize(cfrToken);
-//			rtoken.token == cfrToken.token;
-//			rtoken.headerName == cfrToken.headerName;
-//			rtoken.parameterName == cfrToken.parameterName;
+			1 * this.csrfTokenRepository.@tokenRepository.get(_) >> SerializationUtils.serialize(cfrToken);
+			rtoken.token == cfrToken.token;
+			rtoken.headerName == cfrToken.headerName;
+			rtoken.parameterName == cfrToken.parameterName;
 	}	
 	
 	def "load token and return null as key does exist but token does not"() {
@@ -125,8 +125,8 @@ class RedisCsrfTokenRepositoryUnitSpec extends Specification {
 			CsrfToken rtoken = this.csrfTokenRepository.loadToken( request);
 			
 		then:
-			0 * this.csrfTokenRepository.@tokenRepository.get(_) >> null;
-//			rtoken == null;
+			1 * this.csrfTokenRepository.@tokenRepository.get(_) >> null;
+			rtoken == null;
 	}
 	
 	def "load token and return null as key does not exist"() {

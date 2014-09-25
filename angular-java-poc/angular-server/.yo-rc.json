@@ -34,6 +34,10 @@
       {
         "name": "baseModule",
         "file": "src\\app\\baseModule\\baseModule.js"
+      },
+      {
+        "name": "auth",
+        "file": "src\\common\\auth\\auth.js"
       }
     ]
   }
