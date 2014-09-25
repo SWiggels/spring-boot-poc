@@ -1,4 +1,14 @@
-angular.module('golden', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'clientModule', 'myModule', 'baseModule', 'ngCookies', 'auth', 'appConfig']);
+angular.module('golden', [
+    'ui.bootstrap', 
+    'ui.utils', 
+    'ui.router', 
+    'ngAnimate', 
+    'clientModule',
+    'baseModule', 
+    'ngCookies', 
+    'auth',
+    'appConfig'
+]);
 
 angular.module('golden').config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
