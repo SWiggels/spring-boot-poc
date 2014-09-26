@@ -1,4 +1,4 @@
-describe('LoginFormCtrl', function() { 
+describe('LoginFormCtrl', function() {  
 
 	beforeEach(module('auth'));
 
@@ -16,7 +16,6 @@ describe('LoginFormCtrl', function() {
 				}
 			}
 		};
-		//http.defaults.headers.common['Authorization']
 		
 		stateMock = {
 			go: function(newstate){

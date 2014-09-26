@@ -10,4 +10,4 @@ angular.module('auth')
 		$http.defaults.headers.common['Authorization'] = ('Basic ' + btoa($scope.email + ":" + $scope.password));
 		$state.go('base');
 	};
-});
+}); 

@@ -4,7 +4,8 @@ angular.module(
 		'ui.utils', 
 		'ui.router', 
 		'ngAnimate',
-		'auth' 
+		'auth',
+		'appConfig'
 	]
 );
 
