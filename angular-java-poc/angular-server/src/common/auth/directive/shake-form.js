@@ -1,13 +1,12 @@
 angular.module('auth').directive('shakeForm', function($animate) {
 	return {
-    require: '^form',
+    require: '^form', 
     scope: {
       submit: '&',
       submitted: '='
     },
     link: function(scope, element, attrs, form) {
 
-      // listen on submit event
       element.on('submit', function() {
 
         // tell angular to update scope

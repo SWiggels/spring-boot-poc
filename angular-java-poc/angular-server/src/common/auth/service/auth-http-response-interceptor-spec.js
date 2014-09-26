@@ -2,7 +2,7 @@ describe('authHttpResponseInterceptor', function() {
 
 	beforeEach(module('auth')); 
 
-	var q_mock, location, authHttpResponseInterceptor, url,rejected;
+	var q_mock, authHttpResponseInterceptor, rejected;
 
 	beforeEach(function($provide, $injector) {
 		rejected = false;
