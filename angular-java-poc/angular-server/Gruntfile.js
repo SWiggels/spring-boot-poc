@@ -220,7 +220,8 @@ module.exports = function (grunt) {
           '<%= dom_munger.data.appjs %>',
           'bower_components/angular-mocks/angular-mocks.js',
           createFolderGlobs('*-spec.js')
-        ],
+        ]
+       ,
         logLevel:'ERROR',
         reporters:['dots', 'junit'],
         junitReporter: {
@@ -236,14 +237,24 @@ module.exports = function (grunt) {
       during_watch: {
         browsers: ['PhantomJS']
       },
-    }
+    },
+    protractor: {
+      options: {
+      	configFile: "protractor.conf.js"
+      },
+      auto: { keepAlive: false}     	
+    },     
   });
   
+  grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-protractor-runner');
+
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
   grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
-  grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
+  grunt.registerTask('test',['dom_munger:read','karma:all_tests','protractor:auto']);
+  grunt.registerTask('e2e',['dom_munger:read','protractor:auto']);
   grunt.registerTask('run', [ 'dom_munger:read','jshint','express:dev',  'watch' ]);
   
   grunt.event.on('watch', function(action, filepath) {
