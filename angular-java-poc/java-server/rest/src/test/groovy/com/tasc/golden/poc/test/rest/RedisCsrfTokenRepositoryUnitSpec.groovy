@@ -20,16 +20,10 @@ import spock.lang.Specification
 
 class RedisCsrfTokenRepositoryUnitSpec extends Specification {
 
-	RedisServer redisServer;
 	CsrfTokenRepository csrfTokenRepository;
 	
 	def setup() {
-		//this.redisServer = new RedisServer(6379);
 		this.csrfTokenRepository = new RedisCsrfTokenRepository();
-	}
-	
-	def cleanup(){
-		//this.redisServer.stop();
 	}
 	
 	def "generate a token"() {
@@ -140,6 +134,6 @@ class RedisCsrfTokenRepositoryUnitSpec extends Specification {
 			
 		then:
 			0 * this.csrfTokenRepository.@tokenRepository.get(_);
-//			rtoken == null;
+			rtoken == null;
 	}
 }

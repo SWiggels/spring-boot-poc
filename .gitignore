@@ -55,3 +55,7 @@ bin
 .classpath
 .project
 tasc-golden.log
+/angular-java-poc/angular-server/docs2
+/angular-java-poc/angular-server/dist
+/angular-java-poc/nginx/logs/*.log
+/angular-java-poc/nginx/logs/nginx.pid

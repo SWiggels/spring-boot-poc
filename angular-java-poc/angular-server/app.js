@@ -3,11 +3,11 @@ angular.module('golden', [
     'ui.utils', 
     'ui.router', 
     'ngAnimate', 
-    'clientModule', 
-    'myModule', 
+    'clientModule',
     'baseModule', 
     'ngCookies', 
-    'auth'
+    'auth',
+    'appConfig'
 ]);
 
 angular.module('golden').config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
@@ -28,3 +28,4 @@ angular.module('golden').run(function ($rootScope, $http, $cookies) {
         }
     };
 });
+

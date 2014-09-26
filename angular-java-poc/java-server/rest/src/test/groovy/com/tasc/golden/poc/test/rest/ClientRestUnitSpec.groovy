@@ -25,9 +25,8 @@ class ClientRestUnitSpec extends Specification {
 			
 		when:
 			byte[] encodedAuthorisation = Base64.encode(header.getBytes());
-			println new String(encodedAuthorisation);
-		//dXNlcjpwYXNzd29yZA==
-			//Basic dXNlcjpwYXNzd29yZA==
+			println UUID.randomUUID().toString();
+			
 		then:
 			1 == 1;
 	}

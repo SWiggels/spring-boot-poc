@@ -1,9 +1,23 @@
-angular.module(
+/**
+ * @ngdoc module
+ * @name clientModule
+ * @function
+ *
+ * @description
+ * The module for clients.
+ *
+ * **Note:** This is a note.
+ *
+ * 
+ */
+ angular.module(
 	'clientModule', [ 
 		'ui.bootstrap', 
 		'ui.utils', 
 		'ui.router', 
-		'ngAnimate' 
+		'ngAnimate',
+		'auth',
+		'appConfig'
 	]
 );
 
@@ -20,6 +34,7 @@ angular.module('clientModule').
 				}
 			}
 		});
+		
 		$stateProvider.state('base.clientEdit', {
 			url : '/client/:id',
 			templateUrl : 'src/app/client/partial/client-edit/client-edit.html',

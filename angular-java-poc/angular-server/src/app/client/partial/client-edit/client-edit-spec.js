@@ -1,4 +1,4 @@
-describe('ClientEditCtrl', function() {
+describe('ClientEditCtrl', function() {  
 
 	beforeEach(module('clientModule')); 
 
@@ -31,7 +31,6 @@ describe('ClientEditCtrl', function() {
 
   it('should have a ClientEditCtrl controller',  function() {
     expect(ctrl).toBeDefined();
-    //expect(1).toBe(2);
   });
 
 	it('should paas through the data and bind it to the scope', inject(function() {

@@ -29,26 +29,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         	.authorizeRequests()
         	.antMatchers("/api/**")
         	.hasRole("USER")
-        	.anyRequest()
-        	.anonymous()
         .and()
         	.httpBasic();
-    	
-//    	http
-    	//.csrf().disable()
-//    		.authorizeRequests()
-//    		.antMatchers(HttpMethod.GET, "/info").permitAll()
-//    		.anyRequest().hasRole("USER");
-//	        .antMatchers("/api/**").hasRole("USER")
-//	        .anyRequest().anonymous()
-//	        .and()
-//	        .httpBasic();
-    	
     } 
 
     @Configuration
-    protected static class AuthenticationConfiguration extends
-            GlobalAuthenticationConfigurerAdapter {
+    protected static class AuthenticationConfiguration extends GlobalAuthenticationConfigurerAdapter {
 
         @Override
         public void init(AuthenticationManagerBuilder auth) throws Exception {

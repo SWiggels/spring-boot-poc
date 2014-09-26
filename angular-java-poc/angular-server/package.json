@@ -33,7 +33,6 @@
     "load-grunt-tasks": "~0.2"
   },
   "dependencies": {
-    "cors": "^2.4.1",
-    "spring-security-csrf-token-interceptor": "^0.1.1"
+    "cors": "^2.4.1"
   }
 }

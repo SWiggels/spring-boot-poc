@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tasc.golden.poc.csrf.RedisCsrfTokenRepository;
 import com.tasc.golden.poc.dto.SimpleRestResponse;
 
+/**
+ * Simple token to get the CSRF token and passed back. Would be better to have this in cookies, however, I cannot 
+ * as browser issues due to CSRF.
+ */
 @RestController
 public class TokenRest {
 	
