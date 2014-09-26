@@ -1,6 +1,6 @@
 describe('Client services', function() { 
  
- 	beforeEach(module('clientModule'));
+	beforeEach(module('clientModule'));
 
 	var httpBackend, service, config;	
 

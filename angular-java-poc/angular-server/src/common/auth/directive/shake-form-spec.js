@@ -1,4 +1,4 @@
-ddescribe('shakeForm', function() {
+describe('shakeForm', function() {
 
   beforeEach(module('auth'));
 
@@ -6,7 +6,6 @@ ddescribe('shakeForm', function() {
 
   beforeEach(inject(function($rootScope,$compile) {
     scope = $rootScope.$new();
-    scope.submit = function(){console.log('submitted&&&&&&&&&&&&')};
     compile = $compile;
   }));
 

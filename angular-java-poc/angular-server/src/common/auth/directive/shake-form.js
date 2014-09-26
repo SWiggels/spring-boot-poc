@@ -12,15 +12,9 @@ angular.module('auth').directive('shakeForm', function($animate) {
         // tell angular to update scope
         scope.$apply(function() {
 
-          // everything ok -> call submit fn from controller
           if (form.$valid) {
             return scope.submit();
           }
-
-          // show error messages on submit
-          scope.submitted = true;
-
-          // shake that form
           $animate.addClass(element, 'shake', function() {
             $animate.removeClass(element, 'shake');
           });
