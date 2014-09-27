@@ -22,7 +22,6 @@
     "moment": "~2.5",
     "less.js": "~1.6",
     "font-awesome": "~4.0",
-    "angular-placeholders": "*",
-    "spring-security-csrf-token-interceptor": "~0.1.5"
+    "angular-placeholders": "*"
   }
 }

@@ -37,7 +37,6 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-  
 	express: {
 		options: {
 			  // Override the command used to start the server.
@@ -240,11 +239,13 @@ module.exports = function (grunt) {
   });
   
   grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-ngdoc');
 
   grunt.registerTask('build',['jshint','clean:before','less','dom_munger','ngtemplates','cssmin','concat','ngmin','uglify','copy','htmlmin','imagemin','clean:after']);
   grunt.registerTask('serve', ['dom_munger:read','jshint','connect', 'watch']);
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
   grunt.registerTask('run', [ 'dom_munger:read','jshint','express:dev',  'watch' ]);
+
   
   grunt.event.on('watch', function(action, filepath) {
     //https://github.com/gruntjs/grunt-contrib-watch/issues/156

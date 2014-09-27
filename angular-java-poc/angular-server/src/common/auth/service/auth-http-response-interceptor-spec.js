@@ -29,7 +29,7 @@ describe('authHttpResponseInterceptor', function() {
 		expect($location.search).toHaveBeenCalled();
 	}));
 
-	it('should not change location to login as error is not 401 but q reject is called', inject(function($location) {
+	it('should not change location as 403 is received but q reject is called', inject(function($location) {
 		spyOn($location, 'search');
 		expect(rejected).toBe(false);
 		authHttpResponseInterceptor.responseError({status:403, responseError:"Unauthorized"});

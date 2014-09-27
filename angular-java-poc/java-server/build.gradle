@@ -34,11 +34,12 @@ allprojects {
     }
 
 	apply plugin: 'maven'
-    apply plugin: 'idea'
-    apply plugin: 'eclipse'
-    apply plugin: 'java'
+	apply plugin: 'idea'
+	apply plugin: 'eclipse'
+	apply plugin: 'java'
 	apply plugin: 'groovy'
-    apply plugin: 'spring-boot'
+	apply plugin: 'spring-boot'
+	
 	bootRepackage {
 		mainClass = 'com.tasc.golden.Application'
 	}
@@ -82,8 +83,11 @@ subprojects() {
 		compile ("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
 		compile ("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
         compile ("org.projectlombok:lombok:$lombokVersion")
+		compile ('org.jolokia:jolokia-core')
 		
 		compile name: 'tasc.exception-1.0.0-SNAPSHOT'
+		
+		compile ('org.jolokia:jolokia-core')
 		
 		String junitVersion 			= "4.11"
 		String spockVersion				= "0.7-groovy-2.0"

@@ -1,6 +1,6 @@
 describe('Client services', function() { 
  
-	beforeEach(module('clientModule'));
+	beforeEach(module('clientModule')); 
 
 	var httpBackend, service, config;	
 
@@ -23,12 +23,10 @@ describe('Client services', function() {
 		);
 
 		var resolvedValue = [];
-		var rvar = service.findAll();
+		var promise = service.findAll();
 
-		rvar.then(function(data) {
+		promise.then(function(data) {
 			resolvedValue = data;
-		}, function() {
-			console.log('error');
 		});
 
 		httpBackend.flush();
@@ -51,8 +49,6 @@ describe('Client services', function() {
 
 		rvar.then(function(data) {
 			resolvedValue = data;
-		}, function() {
-			console.log('error');
 		});
 
 		httpBackend.flush();
@@ -63,12 +59,10 @@ describe('Client services', function() {
 
 	it('should save the object to the backend data store', inject(function($rootScope) {
 		
-
 		httpBackend.whenGET(config.prepend_rest_endpoint('/api/token')).respond(
 			{response:"bef6263f-8a94-4b03-83be-46723e21a00d"}
 		);
 
-		
 		httpBackend.whenPOST(config.prepend_rest_endpoint('/api/client/save'), {}).respond(201, '');
 
 		var msg = 'No Callback';

@@ -29,8 +29,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         	.authorizeRequests()
         	.antMatchers("/api/**")
         	.hasRole("USER")
-        	.anyRequest()
-        	.anonymous()
         .and()
         	.httpBasic();
     } 

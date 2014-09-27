@@ -1,4 +1,16 @@
-angular.module(
+/**
+ * @ngdoc module
+ * @name clientModule
+ * @function
+ *
+ * @description
+ * The module for clients.
+ *
+ * **Note:** This is a note.
+ *
+ * 
+ */
+ angular.module(
 	'clientModule', [ 
 		'ui.bootstrap', 
 		'ui.utils', 

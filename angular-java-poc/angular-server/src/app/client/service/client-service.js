@@ -1,7 +1,7 @@
 angular.module('clientModule').factory('clientService',function($http, $q, tokenService,configService) {
 
 	var clientService = {};
-
+ 
 	clientService.findAll = function() {
 		var deferred = $q.defer();
 		$http.get(configService.prepend_rest_endpoint('/api/clients')). 

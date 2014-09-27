@@ -22,7 +22,6 @@ public class HelloWorldRest implements IHelloWorldRest {
     @Override
     @RequestMapping("/api/helloworld")
     public HelloWorld greeting(@RequestParam(value="name", required=false, defaultValue="World") final String name) {
-    	log.error("Hello world.");
         return new HelloWorld(new AtomicLong().incrementAndGet(), String.format("Hello, %s!", name)); 
     }
 }

@@ -1,20 +1,14 @@
 describe('BaseCtrl', function() {
 
 	beforeEach(module('baseModule'));
-
+ 
 	var scope,ctrl;
-    var clientServiceMock, stateMock;
-    var currentState = "No State Set";
+  var stateMock;
+  var currentState = "No State Set";
 
     beforeEach(function(){
         
-        clientServiceMock = {
-            save: function(record, callback){
-                callback();
-            }
-        };
-
-        stateMock = {
+      stateMock = {
           go: function(newstate){
             currentState = newstate;
           },

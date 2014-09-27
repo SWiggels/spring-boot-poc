@@ -2,15 +2,11 @@ package com.tasc.golden.poc.filter
 
 import javax.servlet.FilterChain
 import javax.servlet.ServletException
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-import org.springframework.security.web.csrf.CsrfToken
 import org.springframework.stereotype.Component
 import org.springframework.web.filter.OncePerRequestFilter
-
-import com.tasc.golden.poc.csrf.RedisCsrfTokenRepository
 
 @Component
 class CorsFilter extends OncePerRequestFilter {
