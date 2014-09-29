@@ -208,15 +208,17 @@ sudo apt-get install firefox
 
 ```
 
-Modify .profile and add the following line
+Modify .profile for jenkins user to set special display for console 
 
 ```shell
 export DISPLAY=localhost:10.0
 ```
 
-## Run maven for the jvascript passage.
+## Run maven 
+
+Run maven - grunt tasks are specified in the -Dtarget=  parameter
 
 ```shell
 maven grunt:grunt -Dtarget=test
-`l
+```
 
