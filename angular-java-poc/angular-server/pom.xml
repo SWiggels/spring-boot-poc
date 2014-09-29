@@ -16,6 +16,7 @@
      <artifactId>grunt-maven-plugin</artifactId>
      <version>1.4.1</version>
      <configuration>
+        <gruntBuildDirectory>${basedir}</gruntBuildDirectory>
         <!-- example options usage to get verbose output in logs -->
         <gruntOptions>
             <gruntOption>--verbose</gruntOption>
