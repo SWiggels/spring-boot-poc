@@ -3,24 +3,109 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+
 	<groupId>com.tasconline.golden</groupId>
 	<artifactId>tasc-golden</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	
 	<packaging>pom</packaging>
 
-	<name>golden</name>
+	<name>Golden Java Server POM</name>
 	<url>http://maven.apache.org</url>
 
-	<!-- Inherit defaults from Spring Boot -->
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.1.6.RELEASE</version>
+		<groupId>com.tasconline.golden</groupId>
+		<artifactId>angular-java-poc</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+
+ <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-web</artifactId>
+           <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-test</artifactId>
+           <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jetty</artifactId>
+           <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+           <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+           <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+           <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+           <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+          <scope>compile</scope>
+           <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+           <version>2.5.2</version>
+         </dependency>
+         <dependency>
+            <groupId>com.orange.redis-embedded</groupId>
+            <artifactId>embedded-redis</artifactId>
+           <version>0.6</version>
+         </dependency>
+         <dependency>
+           <groupId>com.h2database</groupId>
+           <artifactId>h2</artifactId>
+           <version>1.4.181</version>
+         </dependency>
+      </dependencies>
+  </dependencyManagement>
+
+<build>
+  <pluginManagement>
+    <plugins>
+      <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring.boot.version}</version>
+          <executions>
+               <execution>
+                  <goals>
+                       <goal>repackage</goal>
+                  </goals>
+               </execution>
+          </executions>
+      </plugin>
+    </plugins>
+  </pluginManagement>
+</build>
 
 	<modules>
 		<module>dto</module>
@@ -33,16 +118,4 @@
 		<module>app</module>
 	</modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

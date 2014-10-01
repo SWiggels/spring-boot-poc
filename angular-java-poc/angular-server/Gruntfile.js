@@ -255,6 +255,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test',['dom_munger:read','karma:all_tests']);
   grunt.registerTask('e2e',['dom_munger:read','protractor:auto']);
   grunt.registerTask('run', [ 'dom_munger:read','jshint','express:dev',  'watch' ]);
+  grunt.registerTask('default', ['build']);
 
   
   grunt.event.on('watch', function(action, filepath) {
